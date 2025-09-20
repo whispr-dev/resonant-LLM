@@ -1,0 +1,26 @@
+# Core ML / NLP / Vision
+torch>=2.2.0
+torchvision>=0.17.0
+torchaudio>=2.2.0
+transformers>=4.43.0
+sentence-transformers>=3.0.1
+faiss-cpu>=1.8.0
+
+# Audio IO + STT + TTS playback
+sounddevice>=0.4.6
+webrtcvad>=2.0.10
+faster-whisper>=1.0.2
+simpleaudio>=1.0.4
+pyttsx3>=2.90
+
+# Vision + GUI
+opencv-python>=4.9.0.80
+PyQt5>=5.15.10
+Pillow>=10.2.0
+
+# Utilities
+numpy>=1.26.4
+scipy>=1.13.0
+tqdm>=4.66.4
+pyyaml>=6.0.1
+nltk>=3.8.1

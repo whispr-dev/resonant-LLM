@@ -1,0 +1,43 @@
+# Fren-Agent Configuration
+device: "cuda"   # "cuda" or "cpu"
+
+model:
+  # Vision captioning
+  blip_model: "Salesforce/blip-image-captioning-base"
+  # Local LLM backend for responses (GPT-2 sized) + Resonance gating
+  text_model: "gpt2"
+  max_new_tokens: 120
+  temperature: 0.8
+  top_p: 0.95
+
+  # Resonance parameters (from Riemann resonance idea)
+  resonance:
+    sigma: 0.5       # Re(s) ~ 1/2 locking
+    tau: 14.134725   # seed from first nontrivial zeta zero
+    alpha: 1.5       # logits modulation strength
+    primes: 97       # number of small primes to use
+
+audio:
+  sample_rate: 16000
+  vad_frame_ms: 20
+  vad_aggressiveness: 2
+  stt_model_size: "base.en"  # tiny, base, small, medium, large-v3, ...
+  push_to_talk: true         # set false to enable VAD streaming
+
+tts:
+  engine: "piper"            # "piper" or "pyttsx3"
+  piper:
+    binary_path: "piper"
+    model_path: ""           # e.g. C:/models/piper/en_GB-jenny_dioco.onnx
+    output_wav: "./assets/tts_out.wav"
+
+memory:
+  embeddings_model: "sentence-transformers/all-MiniLM-L6-v2"
+  index_path: "./assets/faiss_mem.index"
+  metadata_path: "./assets/memory.json"
+  k: 5
+
+ui:
+  camera_index: 0
+  fps: 15
+  theme: "dark"
